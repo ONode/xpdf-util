@@ -1,4 +1,4 @@
-# XPDF-UTIL
+# PDF-UTIL
 pdf-util is a tool to extract text from pdf. for the moment not support ocr scannig to extract text only works for searchable pdf files. This package doesn't have nodejs dependencies.
 
 [![Build Status](https://travis-ci.org/onode/xpdf-util.png)](https://travis-ci.org/onode/xpdf-util)
@@ -20,7 +20,7 @@ To begin on OSX, first make sure you have the homebrew package manager installed
 
 
 **pdftotext** is included as part on the xpdf utilities library. **xpdf** can be installed via homebrew
-``` bash
+```bash
 brew install xpdf
 ```
 
@@ -32,15 +32,25 @@ brew install xpdf
 apt-get install poppler-utils
 ```
 
+### Heroku Buildpack
+
+For those who are using heroku VM, you will need to use the buildpack to get the job done.
+Setups:
+
+1. add buildpack on the config for https://github.com/ONode/heroku-buildpack-xpdf
+2. manually adding the `.xpdfrc` file in the main project folder.
+3. edit the languages needed in the file `.xpdfrc`
+4. restart and deploy your dyno
+
 
 ## Usage
-=======
+=====================
 
 ### PDF Info
 
 Obtain info from pdf file
 ```javascript
-var pdfUtil = require('pdf-to-text');
+var pdfUtil = require('pdf-util');
 var pdf_path = "absolute_path/to/pdf_file.pdf";
 
 pdfUtil.info(pdf_path, function(err, info) {
@@ -82,7 +92,6 @@ var pdf_path = "absolute_path/to/pdf_file.pdf";
 
 //option to extract text from page 0 to 10
 
-
 var option = {
     customwork : function(dateline){  return ... your code here },
     new_paragraph: false,
@@ -103,11 +112,14 @@ pdfUtil.pdfToText(upload.path, function(err, data) {
   console.log(data); //print all text    
 });
 ```
+### Custome processing work
+There will be some extra works involving from decoding the line from the PDF pages. There we have the custom job available for decoding.
 
+`option.customwork` is the function for user to make their regex on operations
 
 ## Tests
 =======
-To test that your system satisfies the needed dependencies and that module is functioning correctly execute the command in the pdf-to-text module folder
+To test that your system satisfies the needed dependencies and that module is functioning correctly execute the command in the pdf-util module folder
 ```
 cd <project_root>/node_modules/pdf-util
 npm test
