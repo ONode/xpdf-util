@@ -1,0 +1,41 @@
+{
+  "name": "pdf-util",
+  "version": "0.1.5",
+  "description": "Extract the text from pdf files and more utils",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zetahernandez/pdf-to-text.git"
+  },
+  "keywords": [
+    "pdf",
+    "text",
+    "extract",
+    "convert",
+    "parse",
+    "info",
+    "pdf-to-text",
+    "pdftotext",
+    "Xpdf",
+    "nodejs"
+  ],
+  "author": "Heskj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ONode/xpdf-util/issues"
+  },
+  "homepage": "https://github.com/ONode/xpdf-util",
+  "devDependencies": {
+    "mocha": "~1.21.4",
+    "should": "~4.0.4"
+  },
+  "dependencies": {
+    "lodash": "~4.14.1"
+  }
+}
