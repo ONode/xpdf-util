@@ -6,7 +6,7 @@ pdf-util is a tool to extract text from pdf. for the moment not support ocr scan
 ## Installation
 =======
 To install the module.
-`npm install pdf-to-text`
+`npm install pdf-util`
 
 You need install the next tools to use this module
 
@@ -27,7 +27,8 @@ brew install xpdf
 ### Ubuntu
 
 **pdftotext** is included in the **poppler-utils** library. To installer poppler-utils execute
-``` bash
+
+```bash
 apt-get install poppler-utils
 ```
 
@@ -38,7 +39,7 @@ apt-get install poppler-utils
 ### PDF Info
 
 Obtain info from pdf file
-```js
+```javascript
 var pdfUtil = require('pdf-to-text');
 var pdf_path = "absolute_path/to/pdf_file.pdf";
 
@@ -76,7 +77,7 @@ You can extract text by a range of pages given an option object with **from** an
 
 
 ```javascript
-var pdfUtil = require('pdf-to-text');
+var pdfUtil = require('pdf-util');
 var pdf_path = "absolute_path/to/pdf_file.pdf";
 
 //option to extract text from page 0 to 10
@@ -108,6 +109,6 @@ pdfUtil.pdfToText(upload.path, function(err, data) {
 =======
 To test that your system satisfies the needed dependencies and that module is functioning correctly execute the command in the pdf-to-text module folder
 ```
-cd <project_root>/node_modules/pdf-to-text
+cd <project_root>/node_modules/pdf-util
 npm test
 ```
