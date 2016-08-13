@@ -1,6 +1,6 @@
 {
   "name": "pdf-util",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Extract the text from pdf files and more utils",
   "main": "index.js",
   "directories": {
