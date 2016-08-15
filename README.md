@@ -93,11 +93,18 @@ var pdf_path = "absolute_path/to/pdf_file.pdf";
 //option to extract text from page 0 to 10
 
 var option = {
-    customwork : function(dateline){  return ... your code here },
+    exeOrder_1 : function(tools, dateline){  return ... your code here },
+    exeOrder_2 : function(tools, dateline){  return ... your code here },
+    exeOrder_3 : function(tools, dateline){  return ... your code here },
+
+    from: 0,
+    to: 10,
+
+
     new_paragraph: false,
     remove_space_asian_character: false,
-    from: 0,
-    to: 10
+    remove_single_n_english: false
+
 };
 
 
@@ -112,6 +119,8 @@ pdfUtil.pdfToText(upload.path, function(err, data) {
   console.log(data); //print all text    
 });
 ```
+tools are the object to store all the regular expression to filter out the lines.
+
 ### Custome processing work
 There will be some extra works involving from decoding the line from the PDF pages. There we have the custom job available for decoding.
 
